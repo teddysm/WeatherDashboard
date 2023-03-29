@@ -1,23 +1,35 @@
 const APIKey = "f6d2936051e6180de54a732ae46a3ab1"; // units=imperial
-let city = "London";
+let city = "Atlanta";
 
-// var issueContainer = document.getElementById('issues');
-// var fetchButton = document.getElementById('fetch-button');
-
-$("#weather-search").submit(getApi);
-// $("#check").click(getApi);
-// getApi();
-async function getApi() {
-  if ($("#search-box").val()) city = $("#search-box").val();
+pageLoad();
+async function pageLoad(event) {
   var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey + '&units=imperial';
   var response = await fetch(requestUrl);
   var data = await response.json();
   $("#current-city").text(data.city.name);
   $("#temp").text("Current Temperature\n" + data.list[0].main.temp + " °F");
   $("#wind").text("Current Wind Speed\n" + data.list[0].wind.speed + " MPH");
-  $("#humid").text("Current Humidity" + data.list[0].main.humidity + " %");
-  console("hit");
+  $("#humid").text("Current Humidity\n" + data.list[0].main.humidity + " %");
 }
+
+
+$("#weather-search").submit(getApi);
+// $("#check").click(getApi);
+
+async function getApi(event) {
+  event.preventDefault();
+  if ($("#search-box").val()) city = $("#search-box").val();
+  console.log(city);
+  var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey + '&units=imperial';
+  var response = await fetch(requestUrl);
+  var data = await response.json();
+  $("#current-city").text(data.city.name);
+  $("#temp").text("Current Temperature\n" + data.list[0].main.temp + " °F");
+  $("#wind").text("Current Wind Speed\n" + data.list[0].wind.speed + " MPH");
+  $("#humid").text("Current Humidity\n" + data.list[0].main.humidity + " %");
+}
+
+
 
 
 function setTimeHeader(){
