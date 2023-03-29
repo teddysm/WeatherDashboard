@@ -11,6 +11,7 @@
   rel="stylesheet"
   href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
   />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Weather Dashboard</title>
 </head>
@@ -26,25 +27,35 @@
   <main>
     <div class="container mt-3">
       <div class="row">
-        <form class="col-4 border-bottom border-secondary">
+        <form class="col-4 border-bottom border-secondary" id="weather-search">
           <div class="mb-3 search-box">
             <label for="searchBox" class="h4 form-label mb-3">Search for a City</label>
             <input type="city" class="form-control border-primary mb-3" id="search-box">
           </div>
-          <button type="submit" class="btn btn-primary">Check weather</button>
+          <button type="submit" class="btn btn-primary mb-3" id="check">Check weather</button>
         </form>
-        <div class="card border-primary mb-3 col-8">
-          <div class="card-body">
+        <div class="card border-primary mb-3 col-8 bg-info container text-center">
+          <div class="card-body row align-items-start">
             <h4 class="card-title" id="current-city"></h4>
-            <p class="card-text" id="temp"> Temperature: </p>
-            <p class="card-text" id="wind"> Wind: </p>
-            <p class="card-text" id="humid"> Humidity: </p>
+            <div class="card border-primary mb-5 h-75 bg-white col">
+              <p class="card-text" id="temp"> Temperature </p>
+            </div>
+            <div class="card border-primary mb-5 h-75 bg-white col">
+              <p class="card-text" id="wind"> Wind </p>
+            </div>
+            <div class="card border-primary mb-5 h-75 bg-white col">
+              <!-- TODO: Adding icons -->
+              <!-- <i class="fa-solid fa-temperature-high"></i> -->
+              <p class="card-text" id="humid"> Humidity </p>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="row col-4 mt-3">
+    <div class="container">
+      <div class="column mt-3">
+        <div class="row col-4">
           <button type="button" class="btn btn-primary my-2">Primary</button>
           <button type="button" class="btn btn-secondary my-2">Secondary</button>
           <button type="button" class="btn btn-success my-2">Success</button>
@@ -52,9 +63,12 @@
           <button type="button" class="btn btn-warning my-2">Warning</button>
           <button type="button" class="btn btn-info my-2">Info</button>
         </div>
+        <div class="card-container col-8">
+          <h4> 5-day Forecast</h4>
+        </div>
       </div>
     </div>
-
+    
   </main>
 
 
