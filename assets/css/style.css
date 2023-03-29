@@ -1,7 +1,4 @@
-/* .navbar {
-  display: flex;
+.btn i:hover {
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
 }
-
-.navbar div{
-  justify-content: space-around;
-} */
