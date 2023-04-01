@@ -32,7 +32,7 @@
             <label for="searchBox" class="h4 form-label mb-3">Search for a City</label>
             <input type="city" class="form-control border-primary mb-3" id="search-box">
           </div>
-          <button type="submit" class="btn btn-primary mb-3 hvr-back-pulse" id="check">Check weather</button>
+          <button type="submit" class="btn btn-primary mb-3" id="check">Check weather</button>
         </form>
         <div class="card border-primary mb-3 col-8 bg-info container text-center">
           <div class="card-body row align-items-start" style="height: 80px">
@@ -56,42 +56,69 @@
 
     <div class="container">
       <div class="row mt-3">
-        <div class="row col-3">
-          <button type="button" class="btn btn-primary my-1">Nashville</button>
-          <button type="button" class="btn btn-secondary my-1">Los Angeles</button>
-          <button type="button" class="btn btn-success my-1">Ho Chi Minh</button>
-          <button type="button" class="btn btn-danger my-1">Las Vegas</button>
-          <button type="button" class="btn btn-warning my-1">New York</button>
-          <button type="button" class="btn btn-info mt-1 mb-3">Paris</button>
+        <div class="row col-4">
+          <button type="button" class="btn history-btn btn-primary my-1">Nashville</button>
+          <button type="button" class="btn history-btn btn-secondary my-1">Los Angeles</button>
+          <button type="button" class="btn history-btn btn-success my-1">Ho Chi Minh</button>
+          <button type="button" class="btn history-btn btn-danger my-1">Las Vegas</button>
+          <button type="button" class="btn history-btn btn-warning my-1">New York</button>
+          <button type="button" class="btn history-btn btn-info mt-1 mb-3">Paris</button>
         </div>
         <div class="card border-primary mb-3 col-8 bg-info container text-center">
           <div class="card-body row align-items-start">
-            <h4 class="card-title" id="current-city"></h4>
-            <div class="card border-primary mb-5 h-75 bg-white col">
-              <p>First day</p>
-              <p class="card-text" id="temp"></p>
+            <h4 class="card-title">5 Day Forecast</h4>
+            <div class="card border-primary mb-5 bg-white col">
+              <p id="five-date-7"></p>
+              <p>Temp <i class="fa-solid fa-temperature-high"></i>:</p>
+              <p class="card-text" id="five-day-temp-7"></p>
+              <p>Wind <i class="fa-solid fa-wind"></i>:</p>
+              <p class="card-text" id="five-day-wind-7"></p>
+              <p>Humidity <i class="fa-solid fa-water"></i>:</p>
+              <p class="card-text" id="five-day-humid-7"></p>
             </div>
-            <div class="card border-primary mb-5 h-75 bg-white col">
-              <p>Second day</p>
-              <p class="card-text" id="wind"></p>
+            <div class="card border-primary mb-5 bg-white col">
+              <p id="five-date-14"></p>
+              <p>Temp <i class="fa-solid fa-temperature-high"></i>:</p>
+              <p class="card-text" id="five-day-temp-14"></p>
+              <p>Wind <i class="fa-solid fa-wind"></i>:</p>
+              <p class="card-text" id="five-day-wind-14"></p>
+              <p>Humidity <i class="fa-solid fa-water"></i>:</p>
+              <p class="card-text" id="five-day-humid-14"></p>
             </div>
-            <div class="card border-primary mb-5 h-75 bg-white col">
-              <p>Third day</p>
-              <p class="card-text" id="humid"></p>
+            <div class="card border-primary mb-5 bg-white col">
+              <p id="five-date-21"></p>
+              <p>Temp <i class="fa-solid fa-temperature-high"></i>:</p>
+              <p class="card-text" id="five-day-temp-21"></p>
+              <p>Wind <i class="fa-solid fa-wind"></i>:</p>
+              <p class="card-text" id="five-day-wind-21"></p>
+              <p>Humidity <i class="fa-solid fa-water"></i>:</p>
+              <p class="card-text" id="five-day-humid-21"></p>
             </div>
-            <div class="card border-primary mb-5 h-75 bg-white col">
-              <p>Fourth day</p>
-              <p class="card-text" id="humid"></p>
+            <div class="card border-primary mb-5 bg-white col">
+              <p id="five-date-28"></p>
+              <p>Temp <i class="fa-solid fa-temperature-high"></i>:</p>
+              <p class="card-text" id="five-day-temp-28"></p>
+              <p>Wind <i class="fa-solid fa-wind"></i>:</p>
+              <p class="card-text" id="five-day-wind-28"></p>
+              <p>Humidity <i class="fa-solid fa-water"></i>:</p>
+              <p class="card-text" id="five-day-humid-28"></p>
             </div>
-            <div class="card border-primary mb-5 h-75 bg-white col">
-              <p>Fifth day</p>
-              <p class="card-text" id="humid"></p>
+            <div class="card border-primary mb-5 bg-white col">
+              <p id="five-date-35"></p>
+              <p>Temp <i class="fa-solid fa-temperature-high"></i>:</p>
+              <p class="card-text" id="five-day-temp-35"></p>
+              <p>Wind <i class="fa-solid fa-wind"></i>:</p>
+              <p class="card-text" id="five-day-wind-35"></p>
+              <p>Humidity <i class="fa-solid fa-water"></i>:</p>
+              <p class="card-text" id="five-day-humid-35"></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <button>
+      Hover me
+    </button>
   </main>
 
 
