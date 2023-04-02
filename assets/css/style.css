@@ -3,3 +3,9 @@
   transition: all 0.5s ease-in-out;
 }
 
+.card-body{
+  background: rgb(0,212,255);
+  background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(9,138,167,1) 50%, rgba(8,4,65,1) 100%);
+}
+
+
