@@ -17,34 +17,53 @@ async function getApi(event) {
   // city === "Atlanta" city !== ""
   if ($("#search-box").val() || city !== ""){
     $("#search-box").val() !== "" ? city = $("#search-box").val().trim() : city;
-    $("#search-box").val("");
-    // if($("#search-box").val() !== "") {
-    //   city = $("#search-box").val().trim();
-    // }
+    // if($("#search-box").val() !== "")   createHistoryBtn(city);
+
+    let historyBtn = document.createElement("button");	
+    historyBtn.setAttribute("class", "btn btn-info history-btn mt-1 mb-3 row-3");	
+    historyBtn.setAttribute("type", "submit");	
+    historyBtn.innerHTML = city;	
+    $(".history-btn-container").append(historyBtn);
+    $(".history-btn").click(function(){	
+      console.log("hit");
+      event.preventDefault();	
+      city = $(this).html();	
+      getApi(event);  	
+    });
+
     var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey + '&units=imperial';
     var response = await fetch(requestUrl);
     var data = await response.json();
-    // console.log(data.list);
     
     $("#current-city").text(data.city.name + " " + today);
     $("#temp").text(data.list[0].main.temp + " °F");
     $("#wind").text(data.list[0].wind.speed + " MPH");
     $("#humid").text(data.list[0].main.humidity + " %");  
     handleFiveDay(data.list); 
-
-    // btn history-btn btn-info mt-1 mb-3 add to history	
-    let historyBtn = document.createElement("button");	
-    historyBtn.setAttribute("class", "btn btn-info history-btn mt-1 mb-3 row-3");	
-    historyBtn.setAttribute("id", `history-btn-${i}`);
-    i++;
-    // historyBtn.setAttribute("height", "10%");	
-    historyBtn.innerHTML = city;	
-    $(".history-btn-container").append(historyBtn);
+    $("#search-box").val("");
   } else{
     alert("Please enter a city!");
     return;
   }
 }
+
+// function createHistoryBtn(city){
+//   let historyBtn = document.createElement("button");	
+//   historyBtn.setAttribute("class", "btn btn-info history-btn mt-1 mb-3 row-3");	
+//   historyBtn.setAttribute("type", "submit");	
+//   historyBtn.innerHTML = city;	
+//   $(".history-btn-container").append(historyBtn);
+// }
+
+  // $(".history-btn").each(function(i){
+  //   if ($(".history-btn")[i].innerHTML === city) {
+  //     console.log("hit if");
+  //     console.log(historyBtns[i].innerHTML);
+  //     return;
+  //   }
+  //   else{
+  //   }
+  // })
 
 function handleFiveDay(input){
   // TODO: Work on tomorrow
@@ -56,22 +75,6 @@ function handleFiveDay(input){
     $(`#five-day-humid-${i}`).text(`${input[i].main.humidity} %`);
   }
 }
-
-
-let historyBtn = document.querySelectorAll(".history-btn")
-historyBtn.addEventListener("click", (event)=> {
-  event.preventDefault();
-  getApi(event);
-})
-
-
-$(".history-btn").click(function(event){	
-  event.preventDefault();	
-  city = $(this).val();	
-  console.log(city);
-  console.log("hit");
-  getApi();  	
-});
 
 
 function setTimeHeader(){
