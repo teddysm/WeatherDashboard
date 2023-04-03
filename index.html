@@ -19,7 +19,7 @@
   <header>
     <nav class="navbar bg-primary bg-primary-subtle justify-content-center" data-bs-theme="dark" style="height: 55px">
       <p class="h4 text-primary-emphasis">Weather Dashboard</p>
-      <img src="./assets/img/weather-icon.png" alt="Bootstrap" width="65" height="45">
+      <img src="./assets/img/weather-icon.png" alt="weather-icon" width="65" height="45">
       <div class="h4 text-primary-emphasis" id="current-time"></div>
     </nav>
   </header>
@@ -38,15 +38,19 @@
           <div class="card-body row align-items-start" style="height: 80px">
             <h4 class="card-title" id="current-city"></h4>
             <div class="card border-primary mb-5 bg-white col">
-              <h6 class="fst-italic">Current Temperature <i class="fa-solid fa-temperature-high"></i></h6>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status" class="card-text"><img id="url-icon" width="15" height="15"></span>
+            </div>
+            <div class="card border-primary mb-5 bg-white col">
+              <h6 class="fst-italic">Temperature <i class="fa-solid fa-temperature-high"></i></h6>
               <p class="card-text" id="temp"></p>
             </div>
             <div class="card border-primary mb-5 bg-white col">
-              <h6 class="fst-italic">Current Wind <i class="fa-solid fa-wind"></i></h6>
+              <h6 class="fst-italic">Wind <i class="fa-solid fa-wind"></i></h6>
               <p class="card-text" id="wind"></p>
             </div>
             <div class="card border-primary mb-5 bg-white col">
-              <h6 class="fst-italic">Current Humidity <i class="fa-solid fa-water"></i></h6>
+              <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i></h6>
               <p class="card-text" id="humid"></p>
             </div>
           </div>
@@ -68,6 +72,8 @@
               <p class="card-text" id="five-day-wind-6"></p>
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i>:</h6>
               <p class="card-text" id="five-day-humid-6"></p>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status-6" class="card-text"><img id="url-icon" width="15" height="15"></span>
             </div>
             <div class="card border-primary mb-5 bg-white col">
               <p id="five-date-14"></p>
@@ -77,6 +83,8 @@
               <p class="card-text" id="five-day-wind-14"></p>
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i>:</h6>
               <p class="card-text" id="five-day-humid-14"></p>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status-14" class="card-text"><img id="url-icon" width="15" height="15"></span>
             </div>
             <div class="card border-primary mb-5 bg-white col">
               <p id="five-date-22"></p>
@@ -86,6 +94,8 @@
               <p class="card-text" id="five-day-wind-22"></p>
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i>:</h6>
               <p class="card-text" id="five-day-humid-22"></p>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status-22" class="card-text"><img id="url-icon" width="15" height="15"></span>
             </div>
             <div class="card border-primary mb-5 bg-white col">
               <p id="five-date-30"></p>
@@ -95,6 +105,8 @@
               <p class="card-text" id="five-day-wind-30"></p>
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i>:</h6>
               <p class="card-text" id="five-day-humid-30"></p>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status-30" class="card-text"><img id="url-icon" width="15" height="15"></span>
             </div>
             <div class="card border-primary mb-5 bg-white col">
               <p id="five-date-38"></p>
@@ -104,6 +116,8 @@
               <p class="card-text" id="five-day-wind-38"></p>
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i>:</h6>
               <p class="card-text" id="five-day-humid-38"></p>
+              <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
+              <span id="status-38" class="card-text"><img id="url-icon" width="15" height="15"></span>
             </div>
           </div>
         </div>
