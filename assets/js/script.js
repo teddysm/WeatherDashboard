@@ -55,19 +55,24 @@ function createHistoryBtn(city){
     historyBtn.setAttribute("type", "submit");	
     historyBtn.innerHTML = city;	
     $(".history-btn-container").append(historyBtn);
+    historyBtn.addEventListener("click", (event) => {
+      // event.preventDefault();
+      console.log(city);
+      getApi(event);
+    })
   }
 }
 
 
-$(".history-btn").each(function(){
-  $("history-btn").click(function(event){    
-    console.log("hit")
-    event.preventDefault();    
-    city = $(this).html();    
-    console.log(city);
-    getApi(event);      
-  });
-})
+// $(".history-btn").each(function(){
+//   $("history-btn").click(function(event){    
+//     console.log("hit")
+//     event.preventDefault();    
+//     city = $(this).html();    
+//     console.log(city);
+//     getApi(event);      
+//   });
+// })
 
 
 
