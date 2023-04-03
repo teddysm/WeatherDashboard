@@ -26,7 +26,7 @@ async function getApi(event) {
     let data = await response.json();
     let icon = data.list[0].weather[0].icon;
     let iconURL = "https://openweathermap.org/img/wn/" + icon +".png";
-    let iconElement = $('img').attr('id', "#url-icon").attr('src', iconURL).attr('width', '45').attr('height', '45');
+    let iconElement = $('img').attr('src', iconURL).attr('width', '45').attr('height', '45');
 
     // TODO: ICON
     $("#current-city").text(data.city.name + " " + today);
@@ -67,13 +67,12 @@ function handleFiveDay(input){
   for(let i = 6; i < input.length; i+=8){
     let icon = input[i].weather[0].icon;
     let iconURL = "https://openweathermap.org/img/wn/" + icon +".png";
-    let iconElement = $('img').attr('id', `#url-icon-${i}`).attr('src', iconURL).attr('width', '45').attr('height', '45');
+    let iconElement = $('img').attr('src', iconURL).attr('width', '45').attr('height', '45');
     $(`#five-date-${i}`).text(dayjs(input[i].dt_txt.split(" ")[0]).format("MMM-DD-YYYY"));
     $(`#five-day-temp-${i}`).text(`${input[i].main.temp} °F`);
     $(`#five-day-wind-${i}`).text(`${input[i].wind.speed} MPH`);
     $(`#five-day-humid-${i}`).text(`${input[i].main.humidity} %`);
-    $(`#status-${i}`).text(`${input[i].weather[0].description}`);
-    $(`#status-${i}`).append(iconElement);
+    $(`#status-${i}`).text(`${input[i].weather[0].description}`).append(iconElement);;
   }
 }
 
