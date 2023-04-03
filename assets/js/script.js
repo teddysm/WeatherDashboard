@@ -13,16 +13,11 @@ window.addEventListener("unload", (event)=> {
 })
 
 
-
-
 $("#weather-search").submit(getApi);
 
 async function getApi(event) {
   event.preventDefault();
   let today = dayjs().format('MMM DD, YYYY'); 
-
-
-
   if ($("#search-box").val() || city !== ""){
     $("#search-box").val() !== "" ? city = $("#search-box").val().trim() : city;
     createHistoryBtn(city);
@@ -55,25 +50,16 @@ function createHistoryBtn(city){
     historyBtn.setAttribute("type", "submit");	
     historyBtn.innerHTML = city;	
     $(".history-btn-container").append(historyBtn);
-    historyBtn.addEventListener("click", (event) => {
-      // event.preventDefault();
-      console.log(city);
-      getApi(event);
-    })
   }
 }
 
 
-// $(".history-btn").each(function(){
-//   $("history-btn").click(function(event){    
-//     console.log("hit")
-//     event.preventDefault();    
-//     city = $(this).html();    
-//     console.log(city);
-//     getApi(event);      
-//   });
-// })
-
+$(".history-btn-container").on("click", function(event){
+  if(event.target.innerText){
+    city = event.target.innerText;
+    getApi(event);
+  }  
+})
 
 
 
