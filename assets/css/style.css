@@ -8,4 +8,12 @@
   background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(9,138,167,1) 50%, rgba(8,4,65,1) 100%);
 }
 
+.card-height {
+  height: 66px !important;
+}
+
+.card-height-2 {
+  height: 360px !important;
+}
+
 

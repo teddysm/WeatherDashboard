@@ -21,16 +21,16 @@ async function getApi(event) {
   if ($("#search-box").val() || city !== ""){
     $("#search-box").val() !== "" ? city = $("#search-box").val().trim() : city;
     createHistoryBtn(city);
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey + '&units=imperial';
-    var response = await fetch(requestUrl);
-    var data = await response.json();
-    var icon = data.list[0].weather[0].icon;
-    var iconURL = "https://openweathermap.org/img/wn/" + icon +".png";
+    let requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + APIKey + '&units=imperial';
+    let response = await fetch(requestUrl);
+    let data = await response.json();
+    let icon = data.list[0].weather[0].icon;
+    let iconURL = "https://openweathermap.org/img/wn/" + icon +".png";
+    let iconElement = $('img').attr('id', "#url-icon").attr('src', iconURL).attr('width', '45').attr('height', '45');
 
     // TODO: ICON
     $("#current-city").text(data.city.name + " " + today);
-    $('#status').text(data.list[0].weather[0].description);
-    $('#url-icon').attr("src", iconURL);
+    $('#status').text(data.list[0].weather[0].description).append(iconElement);
     $("#temp").text(data.list[0].main.temp + " °F");
     $("#wind").text(data.list[0].wind.speed + " MPH");
     $("#humid").text(data.list[0].main.humidity + " %");  
@@ -64,14 +64,16 @@ $(".history-btn-container").on("click", function(event){
 
 
 function handleFiveDay(input){
-  // TODO: Work on tomorrow
-  // let tomorrow = dayjs().add(1, 'day').format('MMM DD, YYYY');
   for(let i = 6; i < input.length; i+=8){
+    let icon = input[i].weather[0].icon;
+    let iconURL = "https://openweathermap.org/img/wn/" + icon +".png";
+    let iconElement = $('img').attr('id', `#url-icon-${i}`).attr('src', iconURL).attr('width', '45').attr('height', '45');
     $(`#five-date-${i}`).text(dayjs(input[i].dt_txt.split(" ")[0]).format("MMM-DD-YYYY"));
     $(`#five-day-temp-${i}`).text(`${input[i].main.temp} °F`);
     $(`#five-day-wind-${i}`).text(`${input[i].wind.speed} MPH`);
     $(`#five-day-humid-${i}`).text(`${input[i].main.humidity} %`);
     $(`#status-${i}`).text(`${input[i].weather[0].description}`);
+    $(`#status-${i}`).append(iconElement);
   }
 }
 
