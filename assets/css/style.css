@@ -1,31 +1,24 @@
+/* create hover effect for buttons */
 .btn i:hover {
   font-size: 20px;
   transition: all 0.5s ease-in-out;
 }
 
+/* create gradient effect for card containers */
 .card-body{
   background: rgb(0,212,255);
   background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(9,138,167,1) 50%, rgba(8,4,65,1) 100%);
 }
 
+/* set first card height */
 .card-height {
   height: 66px;
 }
 
+/* set second card height */
 .card-height-2 {
   height: 335px;
 }
 
-.footer{
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 25px;
-  text-align: center;
-  background-color: rgba(8,4,65,1);
-  color: rgb(0,212,255);
-}
 
 
