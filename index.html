@@ -35,21 +35,21 @@
           <button type="submit" class="btn btn-primary mb-3">Check weather</button>
         </form>
         <div class="card border-primary mb-3 col-8 bg-info container text-center">
-          <div class="card-body row align-items-start">
+          <div class="card-body row align-items-start rounded">
             <h4 class="card-title" id="current-city"></h4>
-            <div class="card card-height  border-primary mb-5 bg-white col">
+            <div class="card card-height  border-primary mb-3 bg-white col">
               <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
               <span id="status" class="card-text"></span>
             </div>
-            <div class="card card-height  border-primary mb-5 bg-white col">
+            <div class="card card-height  border-primary mb-3 bg-white col">
               <h6 class="fst-italic">Temperature <i class="fa-solid fa-temperature-high"></i></h6>
               <p class="card-text" id="temp"></p>
             </div>
-            <div class="card card-height  border-primary mb-5 bg-white col">
+            <div class="card card-height  border-primary mb-3 bg-white col">
               <h6 class="fst-italic">Wind <i class="fa-solid fa-wind"></i></h6>
               <p class="card-text" id="wind"></p>
             </div>
-            <div class="card card-height border-primary mb-5 bg-white col">
+            <div class="card card-height border-primary mb-3 bg-white col">
               <h6 class="fst-italic">Humidity <i class="fa-solid fa-water"></i></h6>
               <p class="card-text" id="humid"></p>
             </div>
@@ -62,9 +62,9 @@
       <div class="row mt-3">
         <div class="row-cols-lg-1 col-4 history-btn-container"></div>
         <div class="card border-primary mb-3 col-8 bg-info container text-center">
-          <div class="card-body row align-items-start">
+          <div class="card-body row align-items-start rounded">
             <h4 class="card-title">5 Day Forecast</h4>
-            <div class="card card-height-2 border-primary mb-5 bg-white col">
+            <div class="card card-height-2 border-primary mb-3 bg-white col">
               <p id="five-date-6"></p>
               <h6 class="fst-italic">Temp <i class="fa-solid fa-temperature-high"></i>:</h6>
               <p class="card-text" id="five-day-temp-6"></p>
@@ -75,7 +75,7 @@
               <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
               <span id="status-6" class="card-text"></span>
             </div>
-            <div class="card card-height-2 border-primary mb-5 bg-white col">
+            <div class="card card-height-2 border-primary mb-3 bg-white col">
               <p id="five-date-14"></p>
               <h6 class="fst-italic">Temp <i class="fa-solid fa-temperature-high"></i>:</h6>
               <p class="card-text" id="five-day-temp-14"></p>
@@ -86,7 +86,7 @@
               <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
               <span id="status-14" class="card-text"></span>
             </div>
-            <div class="card card-height-2 border-primary mb-5 bg-white col">
+            <div class="card card-height-2 border-primary mb-3 bg-white col">
               <p id="five-date-22"></p>
               <h6 class="fst-italic">Temp <i class="fa-solid fa-temperature-high"></i>:</h6>
               <p class="card-text" id="five-day-temp-22"></p>
@@ -97,7 +97,7 @@
               <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
               <span id="status-22" class="card-text"></span>
             </div>
-            <div class="card card-height-2 border-primary mb-5 bg-white col">
+            <div class="card card-height-2 border-primary mb-3 bg-white col">
               <p id="five-date-30"></p>
               <h6 class="fst-italic">Temp <i class="fa-solid fa-temperature-high"></i>:</h6>
               <p class="card-text" id="five-day-temp-30"></p>
@@ -108,7 +108,7 @@
               <h6 class="fst-italic">Status <i class="fa-solid fa-sun-plant-wilt"></i></h6>
               <span id="status-30" class="card-text"></span>
             </div>
-            <div class="card card-height-2 border-primary mb-5 bg-white col">
+            <div class="card card-height-2 border-primary mb-3 bg-white col">
               <p id="five-date-38"></p>
               <h6 class="fst-italic">Temp <i class="fa-solid fa-temperature-high"></i>:</h6>
               <p class="card-text" id="five-day-temp-38"></p>
@@ -124,6 +124,11 @@
       </div>
     </div>
   </main>
+  <footer>
+    <nav class="navbar bg-primary bg-primary-subtle justify-content-center" data-bs-theme="dark" style="height: 42px">
+      <p class="h4 text-primary-emphasis">© 2023 Thanh Doan. All Rights Reserved. </p>
+    </nav>
+  </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
